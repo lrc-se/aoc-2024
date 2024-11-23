@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "module": "ESNext",
+    "outDir": "./dist",
+    "strictNullChecks": true,
+    "target": "ESNext"
+  }
+}
