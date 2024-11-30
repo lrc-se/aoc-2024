@@ -5,6 +5,8 @@ set -e
 if ! type bun; then
   echo "### Installing bun ###"
   curl -fsSL https://bun.sh/install | bash
+  export BUN_INSTALL="$HOME/.bun"
+  export PATH="$BUN_INSTALL/bin:$PATH"
 fi
 
 for d in */; do
@@ -16,3 +18,8 @@ for d in */; do
     cd ..
   fi
 done
+
+echo
+echo "### Building frontend ###"
+bun install
+bun run node_modules/vite/bin/vite.js build
