@@ -3,10 +3,20 @@
 }
 
 html {
+  --color-hi: #0f0;
+  --color-mid: #0c0;
+  --color-lo: #090;
+  --color-bg: #000;
+  --bold-weight: 700;
   font-size: 16px;
 }
 
 body {
+  background-color: var(--color-bg);
   margin: 0;
   padding: 0;
+}
+
+strong {
+  font-weight: var(--bold-weight);
 }
