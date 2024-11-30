@@ -2,9 +2,9 @@
   "name": "aoc-2024",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev-backend": "bun --watch index.js",
+    "dev-frontend": "vite",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
     "start": "bun index.js"
   },
   "dependencies": {
