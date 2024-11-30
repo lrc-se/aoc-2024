@@ -34,10 +34,14 @@ The base examples also include a shell script *run.sh*, which will time the exec
 If the `mode` argument is omitted, the puzzle will be run in normal mode without release optimizations. Input is read from *input.txt* in normal mode, and from *input-testX.txt* in test mode where *X* is set to the value of `testsuffix`.
 
 
-Server
-------
+Web app
+-------
 
-Also included is a simple server application, with Bun itself as its only dependency, which provides API access to the various entries. The following endpoints are available:
+Also included is a simple web application which offers a terminal-like interface for running the entries.
+
+### Server
+
+The server application has Bun itself as its only dependency and provides API access to the various entries. The following endpoints are available:
 
 `GET /entries`
 
@@ -73,13 +77,28 @@ Errors have the following format:
 }
 ```
 
+### Client
+
+The client application is built with Vue and Vite, and is also served by the server application above when built for production.
+
 ### Port
 
-The server will listen on port 1337 by default, but this can be overridden by setting the `port` environment variable.
+The server will listen on port 1337 by default, but this can be overridden by setting the `port` environment variable. In dev mode the client port is handled by Vite, and in production mode (i.e. when served by the backend) the client is accessible at the server root URL.
+
+### Development
+
+The following commands are available:
+
+`dev-backend`: Start the server in watch mode  
+`dev-frontend`: Start the client in dev mode  
+`start`: Start the server  
+`build`: Build the client
+
+In development mode the server and the client must be run separately, since the Vite dev server cannot coexist on the same port with the API. Also note that the server requires that the .NET entries it runs be built in release mode, so either do that manually first or run the full build script (see below).
 
 ### Docker
 
-The server has been containerized, supporting both .NET and Bun. Its *Dockerfile* executes the *build.sh* script in the project root, which will install Bun (if not already installed) and then execute a secondary *build.sh* script in every entry directory where it exists (which is currently only in .NET entries). Running the container will then launch the server; remember to expose whatever port is passed as an environment variable as per above, or just use `-p 1337:1337` in the default case.
+The web application has been containerized, supporting both .NET and Bun. Its *Dockerfile* executes the *build.sh* script in the project root, which will install Bun (if not already installed), execute a secondary *build.sh* script in every entry directory where it exists (which is currently only in .NET entries), and finally build the frontend. Running the container will then launch the server; remember to expose whatever port is passed as an environment variable as per above, or just use `-p 1337:1337` in the default case.
 
 
 Puzzles
