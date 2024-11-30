@@ -1,5 +1,5 @@
 import { $, file, serve } from "bun";
-import { join } from "path";
+import { join, resolve } from "path";
 import { readdir } from "node:fs/promises";
 
 const Entrypoints = {
@@ -10,6 +10,8 @@ const Entrypoints = {
 };
 
 const entries = {};
+
+const distPath = resolve("./dist");
 
 const dirs = await readdir(".", { withFileTypes: true });
 for (const dir of dirs.filter(d => d.isDirectory() && (d.name.startsWith("day") || d.name.startsWith("example-")))) {
@@ -23,13 +25,17 @@ const server = serve({
   async fetch(req) {
     const url = new URL(req.url);
     if (url.pathname === "/entries") {
-      return Response.json(getEntries());
+      return createResponse(getEntries());
     }
     const matchEntry = /^\/entries\/([a-zA-Z0-9-]+)$/.exec(url.pathname);
     if (matchEntry) {
       return runEntry(matchEntry[1], url.searchParams.get("part"), Number(url.searchParams.get("test")));
     }
-    return getErrorResponse("Route not found", 404);
+    const staticFile = await getStaticFile(url.pathname);
+    if (staticFile) {
+      return new Response(staticFile);
+    }
+    return createErrorResponse("Route not found", 404);
   },
   port: process.env.port || 1337
 });
@@ -83,7 +89,7 @@ function getEntries() {
 async function runEntry(name, part, test) {
   const entry = entries[name];
   if (!entry) {
-    return getErrorResponse("Entry not found", 404);
+    return createErrorResponse("Entry not found", 404);
   }
   const filename = test
     ? (test > 1 ? `input-test${test}.txt` : "input-test.txt")
@@ -94,17 +100,35 @@ async function runEntry(name, part, test) {
       .env({ ...process.env, part: part ?? "" })
       .text();
     if (!output) {
-      return getErrorResponse("Running entry produced no output", 500);
+      return createErrorResponse("Running entry produced no output", 500);
     }
-    return Response.json({
+    return createResponse({
       language: entry.language,
       output: output.trimEnd().split(/\r?\n/)
     });
   } catch {
-    return getErrorResponse("Error running entry", 500);
+    return createErrorResponse("Error running entry", 500);
   }
 }
 
-function getErrorResponse(error, status) {
-  return Response.json({ error }, { status });
+async function getStaticFile(path) {
+  const filePath = resolve(join(distPath, path === "/" ? "index.html" : path));
+  if (!filePath.startsWith(distPath)) {
+    return null;
+  }
+  const staticFile = file(filePath);
+  if (await staticFile.exists()) {
+    return staticFile;
+  }
+  return null;
+}
+
+function createResponse(data, status = 200) {
+  const response = Response.json(data, { status });
+  response.headers.set("Access-Control-Allow-Origin", "*");
+  return response;
+}
+
+function createErrorResponse(error, status) {
+  return createResponse({ error }, status);
 }
