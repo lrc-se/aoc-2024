@@ -2,8 +2,17 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
+    "isolatedModules": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "./dist",
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "target": "ESNext"
   }
