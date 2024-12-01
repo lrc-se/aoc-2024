@@ -1,7 +1,7 @@
 Advent of Code 2024
 ===================
 
-Solutions for the 2024 edition of the [Cygnified Advent of Code](https://aoc.cygni.se/).
+[Solutions](#puzzles) for the 2024 edition of the [Cygnified Advent of Code](https://aoc.cygni.se/).
 
 Going to try out Bun this year, as well as more bleeding-edge .NET.
 
@@ -104,4 +104,6 @@ The web application has been containerized, supporting both .NET and Bun. Its *D
 Puzzles
 -------
 
-TBA
+### Day 1 (C#)
+
+.NET built-ins all the way.
