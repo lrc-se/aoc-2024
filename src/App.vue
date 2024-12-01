@@ -140,11 +140,8 @@ export default {
         outputError("No entries loaded");
         return;
       }
-      if (num == null) {
-        outputError("No entry specified");
-        return;
-      }
-      if (Number.isNaN(num) || !curEntries[num]) {
+      const entry = curEntries[num];
+      if (!entry) {
         outputError("Invalid entry");
         return;
       }
@@ -152,11 +149,10 @@ export default {
         outputError("Invalid part");
         return;
       }
-      if (test != null && (Number.isNaN(test) || test < 1)) {
+      if (test != null && !entry.tests.includes(test)) {
         outputError("Invalid test input");
         return;
       }
-      const entry = curEntries[num];
       outputText(`Running part ${part} for entry '${entry.name}' (${entry.language}) using ${test ? `test input ${test}` : "full input"}...`);
       const result = await callApi<EntryResult>(`/entries/${entry.name}?part=part${part}&test=${test}`);
       if (result) {
