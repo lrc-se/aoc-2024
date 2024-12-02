@@ -88,7 +88,7 @@ watch(props.lines, () => {
         <span v-html="line.text"></span>
       </template>
       <template v-else-if="line.type === 'error'">
-        <span class="prefix">ERROR:</span>
+        <span class="prefix">[ERROR]</span>
         {{ line.text }}
       </template>
       <template v-else>
