@@ -107,3 +107,7 @@ Puzzles
 ### Day 1 (C#)
 
 .NET built-ins all the way.
+
+### Day 2 (JavaScript)
+
+Just some loops.
