@@ -111,3 +111,7 @@ Puzzles
 ### Day 2 (JavaScript)
 
 Just some loops.
+
+### Day 3 (TypeScript)
+
+Regexes took care of this. Also note that part 2 requires test input 2.
