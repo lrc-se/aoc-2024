@@ -115,3 +115,7 @@ Just some loops.
 ### Day 3 (TypeScript)
 
 Regexes took care of this. Also note that part 2 requires test input 2.
+
+### Day 4 (C#)
+
+Scanning for both regular and reversed forms only in forward directions, with early returns.
