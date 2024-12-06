@@ -123,3 +123,7 @@ Scanning for both regular and reversed forms only in forward directions, with ea
 ### Day 5 (JavaScript)
 
 Sets'n'sorts, with some JS-specific shortcuts.
+
+### Day 6 (C#)
+
+Infinite loops again! Solved part 2 brute-forcefully first just to get the answer, and then optimized it by only placing obstructions in the guard's original path.
