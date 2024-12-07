@@ -127,3 +127,7 @@ Sets'n'sorts, with some JS-specific shortcuts.
 ### Day 6 (C#)
 
 Infinite loops again! Solved part 2 brute-forcefully first just to get the answer, and then optimized it by only placing obstructions in the guard's original path.
+
+### Day 7 (F#)
+
+Yay, recursion! Good fit for a functional approach, and it scans rather well too.
