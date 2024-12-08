@@ -131,3 +131,7 @@ Infinite loops again! Solved part 2 brute-forcefully first just to get the answe
 ### Day 7 (F#)
 
 Yay, recursion! Good fit for a functional approach, and it scans rather well too.
+
+### Day 8 (C#)
+
+Just coordinates and combinatorics, nothing fancy.
