@@ -135,3 +135,8 @@ Yay, recursion! Good fit for a functional approach, and it scans rather well too
 ### Day 8 (C#)
 
 Just coordinates and combinatorics, nothing fancy.
+
+### Day 9 (TypeScript/C#)
+
+Since the total size of the disk didn't look too big even with the full input I just used direct memory transfers, keeping track of free blocks separately in part 2.
+I originally wrote the solution in TS but then I thought I'd see if a C# version based on writable spans would be significantly faster – and since it turned out to be just that I'm going with the C# version as the main entry and have relegated the TS version to a separate folder. `Span` is *fast*!
