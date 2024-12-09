@@ -70,12 +70,18 @@ function defragmentWhole(diskMap: DiskMap) {
   }
   for (let i = diskMap.files.length - 1; i >= 0; --i) {
     const file = diskMap.files[i];
-    for (const freeBlock of freeBlocks) {
+    for (let j = 0; j < freeBlocks.length; ++j) {
+      const freeBlock = freeBlocks[j];
       if (freeBlock.offset < file.offset && freeBlock.length >= file.length) {
         diskMap.data.fill(file.id, freeBlock.offset, freeBlock.offset + file.length);
         diskMap.data.fill(EMPTY, file.offset, file.offset + file.length);
-        freeBlock.offset += file.length;
-        freeBlock.length -= file.length;
+        const length = freeBlock.length - file.length;
+        if (length > 0) {
+          freeBlock.offset += file.length;
+          freeBlock.length = length;
+        } else {
+          freeBlocks.splice(j, 1);
+        }
         break;
       }
     }

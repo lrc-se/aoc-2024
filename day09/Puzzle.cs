@@ -81,7 +81,12 @@ internal class Puzzle(string rawInput) : AocPuzzle<Input, long>(rawInput)
                 {
                     data[freeBlock.Offset..(freeBlock.Offset + file.Length)].Fill(file.Id);
                     data[file.Offset..(file.Offset + file.Length)].Fill(Empty);
-                    freeBlocks[j] = new(freeBlock.Offset + file.Length, freeBlock.Length - file.Length);
+                    int length = freeBlock.Length - file.Length;
+                    if (length > 0)
+                        freeBlocks[j] = new(freeBlock.Offset + file.Length, length);
+                    else
+                        freeBlocks.RemoveAt(j);
+
                     break;
                 }
             }
