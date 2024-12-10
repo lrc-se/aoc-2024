@@ -140,3 +140,7 @@ Just coordinates and combinatorics, nothing fancy.
 
 Since the total size of the disk didn't look too big even with the full input I just used direct memory transfers, keeping track of free blocks separately in part 2.
 I originally wrote the solution in TS but then I thought I'd see if a C# version based on writable spans would be significantly faster – and since it turned out to be just that I'm going with the C# version as the main entry and have relegated the TS version to a separate folder. `Span` is *fast*!
+
+### Day 10 (C#)
+
+Recursion again, and it didn't even exponentially explode. There are some further optimizations that could be made, but it's already fast enough so I'll abstain for now.
