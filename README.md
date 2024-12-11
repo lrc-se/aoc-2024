@@ -144,3 +144,7 @@ I originally wrote the solution in TS but then I thought I'd see if a C# version
 ### Day 10 (C#)
 
 Recursion again, and it didn't even exponentially explode. There are some further optimizations that could be made, but it's already fast enough so I'll abstain for now.
+
+### Day 11 (JavaScript)
+
+At first I thought that I had seen this before and knew what part 2 would be like, so I used a linked list from the get go, which worked fine for part 1. This time, however, it *did* exponentially explode, so since the sequence as such was not important and only the total count was, I switched to only keeping count of unique stone numbers instead and just summed them up at the end.
