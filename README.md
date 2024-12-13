@@ -148,3 +148,11 @@ Recursion again, and it didn't even exponentially explode. There are some furthe
 ### Day 11 (JavaScript)
 
 At first I thought that I had seen this before and knew what part 2 would be like, so I used a linked list from the get go, which worked fine for part 1. This time, however, it *did* exponentially explode, so since the sequence as such was not important and only the total count was, I switched to only keeping count of unique stone numbers instead and just summed them up at the end.
+
+### Day 12 (C#)
+
+*Solved, needs cleanup before posting*
+
+### Day 13 (TypeScript)
+
+The problem was basically a linear equation system with two equations and two unknowns, so I just solved that first and then used the resulting formulae to arrive at the results, checking for fractions to determine impossible combinations. In this way part 2 was merely a matter of changing the input values and removing the max condition, with no change in execution speed. I do note, however, that TS apparently isn't smart enough to figure out that the `.filter()` call should remove `null` from the resulting element type, but oh well.
