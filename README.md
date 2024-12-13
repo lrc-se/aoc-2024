@@ -151,7 +151,7 @@ At first I thought that I had seen this before and knew what part 2 would be lik
 
 ### Day 12 (C#)
 
-*Solved, needs cleanup before posting*
+This day represented the first real snag of the year, as usual in part 2. For part 1 I used the by now familiar flood fill technique to measure region sizes, and for part 2 I had the idea to reuse the boundary positions identified in the fill step to trace the edges, first horizontally and then vertically. This seemed promising, but there were a whole bunch of edge cases to handle before it passed all the tests (and the full input). There are probably better ways to do it, and better ways to do it this particular way, but it does the trick and completes in a jiffy too.
 
 ### Day 13 (TypeScript)
 
