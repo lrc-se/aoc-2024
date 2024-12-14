@@ -156,3 +156,8 @@ This day represented the first real snag of the year, as usual in part 2. For pa
 ### Day 13 (TypeScript)
 
 The problem was basically a linear equation system with two equations and two unknowns, so I just solved that first and then used the resulting formulae to arrive at the results, checking for fractions to determine impossible combinations. In this way part 2 was merely a matter of changing the input values and removing the max condition, with no change in execution speed. I do note, however, that TS apparently isn't smart enough to figure out that the `.filter()` call should remove `null` from the resulting element type, but oh well.
+
+### Day 14 (JavaScript)
+
+Part 1 was simple enough, and for part 2 I started out by looking for less-likely-than-chance patterns in the output frames manually, which yielded two offsets and periods (one for each dimension) which I could then use to find the convergence and gaze upon the tree. Since *all* robot positions recur at *every* step after the first full cycle I couldn't think of another way to identify the offsets (or indeed the tree frame itself, short of analyzing the picture as such), so in the end I just did more or less the same thing in code by calculating minimum average robot distances and using that to extract the offsets and periods based on the supposition that the salient frames will in fact be the ones with the highest robot densities.
+Note that the code works for both the test input and the full input by relying on certain characteristics of both, but that the test input will give a zero result for part 2 since it has no tree. Running part 2 with the full input will also output the picture of the tree as simple ASCII art before the result.
