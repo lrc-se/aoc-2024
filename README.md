@@ -161,3 +161,7 @@ The problem was basically a linear equation system with two equations and two un
 
 Part 1 was simple enough, and for part 2 I started out by looking for less-likely-than-chance patterns in the output frames manually, which yielded two offsets and periods (one for each dimension) which I could then use to find the convergence and gaze upon the tree. Since *all* robot positions recur at *every* step after the first full cycle I couldn't think of another way to identify the offsets (or indeed the tree frame itself, short of analyzing the picture as such), so in the end I just did more or less the same thing in code by calculating minimum average robot distances and using that to extract the offsets and periods based on the supposition that the salient frames will in fact be the ones with the highest robot densities.
 Note that the code works for both the test input and the full input by relying on certain characteristics of both, but that the test input will give a zero result for part 2 since it has no tree. Running part 2 with the full input will also output the picture of the tree as simple ASCII art before the result.
+
+### Day 15 (C#)
+
+Rather than maintaining position indices I decided to work with the map tiles directly, which was very simple in part 1. In part 2 it brought with it some extra hoops to jump through, but the end result, which doubles down on C# OO shortcuts, is quite fast.
