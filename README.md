@@ -153,9 +153,10 @@ At first I thought that I had seen this before and knew what part 2 would be lik
 
 This day represented the first real snag of the year, as usual in part 2. For part 1 I used the by now familiar flood fill technique to measure region sizes, and for part 2 I had the idea to reuse the boundary positions identified in the fill step to trace the edges, first horizontally and then vertically. This seemed promising, but there were a whole bunch of edge cases to handle before it passed all the tests (and the full input). There are probably better ways to do it, and better ways to do it this particular way, but it does the trick and completes in a jiffy too.
 
-### Day 13 (TypeScript)
+### Day 13 (TypeScript/F#)
 
 The problem was basically a linear equation system with two equations and two unknowns, so I just solved that first and then used the resulting formulae to arrive at the results, checking for fractions to determine impossible combinations. In this way part 2 was merely a matter of changing the input values and removing the max condition, with no change in execution speed. I do note, however, that TS apparently isn't smart enough to figure out that the `.filter()` call should remove `null` from the resulting element type, but oh well.
+*__Update:__ Added an F# version as well, where the `Option` type provides better semantics.*
 
 ### Day 14 (JavaScript)
 
