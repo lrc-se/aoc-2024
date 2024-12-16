@@ -166,3 +166,7 @@ Note that the code works for both the test input and the full input by relying o
 ### Day 15 (C#)
 
 Rather than maintaining position indices I decided to work with the map tiles directly, which was very simple in part 1. In part 2 it brought with it some extra hoops to jump through, but the end result, which doubles down on C# OO shortcuts, is quite fast.
+
+### Day 16 (C#)
+
+Well well, Mr. Dijkstra makes his yearly appearance. After last year's rough formulation I had a better idea of how to tailor the graph, but finding a method to only count nodes belonging to valid paths in part 2 took some time. It's very fast, though.
