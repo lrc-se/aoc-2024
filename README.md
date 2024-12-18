@@ -170,3 +170,11 @@ Rather than maintaining position indices I decided to work with the map tiles di
 ### Day 16 (C#)
 
 Well well, Mr. Dijkstra makes his yearly appearance. After last year's rough formulation I had a better idea of how to tailor the graph, but finding a method to only count nodes belonging to valid paths in part 2 took some time. It's very fast, though.
+
+### Day 17
+
+*Part 1 solved, not posted*
+
+### Day 18 (C#)
+
+Dijkstra again! Also this time the code can handle both the test input and the full input by way of relying on their respective formats.
