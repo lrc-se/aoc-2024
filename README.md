@@ -178,3 +178,7 @@ Well well, Mr. Dijkstra makes his yearly appearance. After last year's rough for
 ### Day 18 (C#)
 
 Dijkstra again! Also this time the code can handle both the test input and the full input by way of relying on their respective formats.
+
+### Day 19 (JavaScript)
+
+Using simple recursion with a first-letter index, and a memoization cache in part 2.
