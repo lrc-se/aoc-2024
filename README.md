@@ -186,3 +186,11 @@ Using simple recursion with a first-letter index, and a memoization cache in par
 ### Day 20 (C#)
 
 I misread and misunderstood the instructions for part 2 several times, but once I registered that the whole thing is basically Manhattan distances with a max limit it just took a few minutes to code up a solution. The special-case shortcut I already had in place for part 1 remains, however, since it's much faster there. As usual test input and full input both work.
+
+### Day 21
+
+*Part 1 solved, not posted*
+
+### Day 22 (C#)
+
+Mmm, bits. Using extensive precomputation in part 2, which after a series of optimization steps is blazingly fast at the expense of higher memory usage.
