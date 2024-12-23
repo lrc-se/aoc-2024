@@ -194,3 +194,7 @@ I misread and misunderstood the instructions for part 2 several times, but once 
 ### Day 22 (C#)
 
 Mmm, bits. Using extensive precomputation in part 2, which after a series of optimization steps is blazingly fast at the expense of higher memory usage.
+
+### Day 23 (TypeScript)
+
+Good day for sets.
