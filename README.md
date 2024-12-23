@@ -171,9 +171,10 @@ Rather than maintaining position indices I decided to work with the map tiles di
 
 Well well, Mr. Dijkstra makes his yearly appearance. After last year's rough formulation I had a better idea of how to tailor the graph, but finding a method to only count nodes belonging to valid paths in part 2 took some time. It's very fast, though.
 
-### Day 17
+### Day 17 (C#)
 
-*Solved, needs cleanup before posting*
+I first implemented the computer in TypeScript and sailed through part 1, and then tried various generic approaches for part 2 before giving in and manually reverse-engineering the actual programs in the inputs. This brought me to a solution I was sure was correct in principle, and which did indeed work with the test input, but I was very surprised to find that it failed halfway through the full input and even produced negative numbers where none should ever exist. It then dawned on me that I was hitting JavaScript's 32-bit integer bitwise operation limit, and a quick port to C# later my solution immediately produced the correct result also with the full input.
+The final code makes as few assumptions as possible about the input, but the one with the loop instruction at the end remains since I don't know how to solve the problem without it.
 
 ### Day 18 (C#)
 
@@ -189,7 +190,7 @@ I misread and misunderstood the instructions for part 2 several times, but once 
 
 ### Day 21
 
-*Part 1 solved, not posted*
+*Solved, needs cleanup before posting*
 
 ### Day 22 (C#)
 
