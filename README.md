@@ -199,3 +199,11 @@ Mmm, bits. Using extensive precomputation in part 2, which after a series of opt
 ### Day 23 (TypeScript)
 
 Good day for sets.
+
+### Day 24
+
+*Solved, not posted*
+
+### Day 25 (TypeScript/F#)
+
+I first did this in a fully imperative/mutable way in TS, which wasn't particularly hard, and then thought I'd try a functional/immutable approach in F#. The two solutions are completely different in their formulation, coming at the problem from different angles, and as usual in the F# case the input parsing is somewhat cumbersome whereas the actual puzzle computation is more succinct and declarative.
