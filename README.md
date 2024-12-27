@@ -200,9 +200,9 @@ Mmm, bits. Using extensive precomputation in part 2, which after a series of opt
 
 Good day for sets.
 
-### Day 24
+### Day 24 (C#)
 
-*Solved, needs cleanup before posting*
+Another tough part 2, where I eventually arrived at a method of checking each wire position individually for swap candidates, which in the end gave me a handful of possible four-combos that seemed to pass all conditions I had set up – and the second of these turned out to be the correct one. There was obviously something too lenient about said conditions that let more than one candidate through, so I went back and implemented a series of checks of rising strictness which seemed to produce a good sequence of winnowing-down and which did eventually lead to a single (correct) answer. It's not super fast, but not awfully slow either, so I'll leave it at that since this was the last star I needed to complete the whole year.
 
 ### Day 25 (TypeScript/F#)
 
