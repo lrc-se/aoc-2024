@@ -207,3 +207,17 @@ Another tough part 2, where I eventually arrived at a method of checking each wi
 ### Day 25 (TypeScript/F#)
 
 I first did this in a fully imperative/mutable way in TS, which wasn't particularly hard, and then thought I'd try a functional/immutable approach in F#. The two solutions are completely different in their formulation, coming at the problem from different angles, and as usual in the F# case the input parsing is somewhat cumbersome whereas the actual puzzle computation is more succinct and declarative.
+
+
+Conclusion
+----------
+
+On the whole the difficulty this year felt less than that of 2023, with only a handful of real gotchas that gave me serious trouble. Still, I got there in the end this time – on the 25th, no less – and the personal times leaderboard looks much better compared to last year. Good show!
+
+As for Bun, I found it to offer several advantages over Node and some ho-hum things, but it also seems not to be quite there yet in terms of performance on Windows; tests on Alpine using the exact same code are considerably more speedy, at least in terms of startup. It was also fun to delve back into Vue and to experience the *relief* of Vite again after otherwise being stuck with the syrup of webpack, even though this part of the project was more of a one-off in the beginning.
+
+I also continue to be satisfied by the performance and DX of modern .NET, with #9 bringing a few extra bits of goodness compared to last year. Type aliases and value tuples remain a great tool, but I wish the former could refer to each other (like in TypeScript, for example) which would simplify things even further.
+
+Finally, I note again that many AoC problems, which are often very performance-oriented, don't tend to fit as well in a fully functional language, but there are exceptions – day 7 being a prime example. As such, I didn't use F# as much as I had hoped, but it's always fun to rewire one's brain into thinking more in terms of data flows than actual instructions. Maybe I'll go back and redo some other days in F# later if I feel like it.
+
+That's it for 2024. God jul!
