@@ -188,9 +188,9 @@ Using simple recursion with a first-letter index, and a memoization cache in par
 
 I misread and misunderstood the instructions for part 2 several times, but once I registered that the whole thing is basically Manhattan distances with a max limit it just took a few minutes to code up a solution. The special-case shortcut I already had in place for part 1 remains, however, since it's much faster there. As usual test input and full input both work.
 
-### Day 21
+### Day 21 (C#)
 
-*Solved, needs cleanup before posting*
+Part 2 gave me a fair bit of trouble here. Keeping track of the button sequences as such quickly exploded memory-wise, so I turned to keeping track of each robot's movements instead. This worked well, but was too slow when the number of robots grew beyond a certain point, so I implemented a cache which would cut straight to the end state of each successive robot's movements whenever a previously performed move was encountered. This solved the speed issue (and then some; it completes almost instantaneously), but the answer was still wrong for the full input. Eventually I discovered that an assumption I had made with regard to optimal paths on the pads did not hold, so I went through all the possibilities manually (there aren't too many of them, so this was feasible) and hardcoded the results, which did indeed make the cached robot sequence produce the correct result. The final code includes a programmatic version of the aforementioned manual optimal path finding process.
 
 ### Day 22 (C#)
 
@@ -202,7 +202,7 @@ Good day for sets.
 
 ### Day 24
 
-*Solved, not posted*
+*Solved, needs cleanup before posting*
 
 ### Day 25 (TypeScript/F#)
 
