@@ -38,7 +38,7 @@ internal class Puzzle(string rawInput) : AocPuzzle<TrailMap, int>(rawInput)
             if (!CanBeNext(pos, height, visited))
                 continue;
 
-            count += CountPaths(pos, target, [.. visited, pos]);
+            count += CountPaths(pos, target, [..visited, pos]);
         }
 
         return count;

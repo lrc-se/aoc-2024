@@ -34,7 +34,7 @@ let parseInput (rawInput: string) =
     let rec loop (sections: string list) (machines: ClawMachine list) =
         match sections with
         | [] -> machines
-        | head :: tail -> loop tail ((head.Split('\n') |> createMachine) :: machines)
+        | section :: nextSections -> loop nextSections ((section.Split('\n') |> createMachine) :: machines)
 
     loop (rawInput.Split("\n\n") |> Array.toList) []
 

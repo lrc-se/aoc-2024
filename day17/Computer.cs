@@ -1,4 +1,4 @@
-enum Instruction
+internal enum Instruction
 {
     adv = 0,
     bxl = 1,
